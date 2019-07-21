@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css小案例之洞洞幺</title>
+    <style>
+        .bookList {
+            color: gray;
+            font-size: 16px;
+            line-height: 24px;
+            overflow: hidden;
+            margin: 5px;
+        }
+        .bookTags {
+            font-size: 14px;
+            float: right;
+        }
+        .bookTxt {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .bookTag {
+            padding: 2px 4px;
+            border: 1px solid;
+            border-radius: 4px;
+        }
+        .bookTag[type = "type"]{
+            color: gray;
+        }
+        .bookTag[type = "status"]{
+            color: red;
+        }
+        .bookTag[type = "number"]{
+            color: blue;
+        }
+        .bookList[reverse] .bookTxt {
+            direction: rtl;
+        }
+    </style>
+</head>
+<body>
+    <a href="#pageLink">单页面的导航定位</a>
+    <a href="#elementPseudoClasses">使用伪类元素</a>
+    <a href="#pageLayout">左右布局-张老师小测</a>
+    <div id="pageLink" class="pageLink">
+        <h2>单页面的导航定位</h2>
+        <p>如当前页面所示，只需要利用<span>a标签</span>中的<span>href属性</span>，与每个需要导航的内容的id保持一致，即可实现相应的效果</p>
+    </div>
+    <div id="elementPseudoClasses">
+        <h2>使用伪类元素轮播点&&添加序列</h2>
+    </div>
+    <div id="pageLayout">
+        <h2>左右布局-张老师小测<a href="https://github.com/zhangxinxu/quiz/issues/34">CSS基础测试9</a></h2>
+        <div class="book">
+            <div class="bookList">
+                <div class="bookTags">
+                <span class="bookTag" type="type">都市</span>
+                <span class="bookTag" type="status">连载中</span>
+                <span class="bookTag" type="number">13.85万字</span>
+                </div>
+                <div class="bookTxt">这是一个很全新的板块，全新的人物，全新的世界，等待你的加入，等待你的阅读点击！！！！</div>
+            </div>
+            <div class="bookList reverse">
+                <div class="bookTags">
+                <span class="bookTag" type="type">都市</span>
+                <span class="bookTag" type="status">连载中</span>
+                <span class="bookTag" type="number">13.85万字</span>
+                </div>
+                <div class="bookTxt">这是一个很全新的板块，全新的人物，全新的世界，等待你的加入，等待你的阅读点击！！！！</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
