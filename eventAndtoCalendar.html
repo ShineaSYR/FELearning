@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Schedule reminder</title>
+    <style>
+        a, a:hover {
+            text-decoration: none;
+            color: #000;
+        }
+        .schedule-reminder {
+            margin: auto;
+        }
+        .sr-txt {
+            text-align: center;
+        }
+        .sr-add {
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+        .sr-add:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="schedule-reminder">
+        <p class="sr-txt">点击可添加活动到日程上</p>
+        <p class="sr-txt">
+            <a href="javascript:" class="sr-add jsOutlook">添加到outlook</a>
+            <a href="javascript:" class="sr-add jsGmail" target="_blank">添加到Gmail</a>
+        </p>
+    </div>
+    <script>
+        var content = 'BEGIN:VCALENDAR\r\
+VERSION:2.0\r\
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN\r\
+BEGIN:VEVENT\r\
+UID:IR@yuewen.com\r\
+DTSTAMP:'+ "20200617T073116Z" +'\r\
+ORGANIZER;CN=' + "阅文集团" +':MAILTO:IR@yuewen.com\r\
+LOCATION:'+ "https://edge.media-server.com/mmc/p/kj9eh82p" +'\r\
+DTSTART:'+ "20200530T200000" +'\r\
+DTEND:'+ "20200530T210000" +'\r\
+SUMMARY:'+ "阅文集团2019年全年业绩电话会议" +'\r\
+DESCRIPTION:'+ "阅文集团将于2020年3月17日公布2019年全年业绩\\n\\n时间：	晚上8:00（香港时间）/ 上午8:00（美国东部时间）\\n\\n语言：	英语\\n\\n网络直播网址：	https:\/\/edge.media-server.com/mmc/p/kj9eh82p\\n\\n电话会议号码：\\n\\n美国免费：1866 519 4004\\n香港：+852 3018 6771\\n中国大陆（固网）：800 819 0121 \\n中国大陆（手机）：400 620 8038\\n英国：+44 20 3621 4779\\n国际：+65 6713 5090\\n会议接入码：6792044\\n	\\n电话会议的回放将于2020年3月17日晚上11:00（香港时间）启用，有效期7天：\\n\\n美国免费：1855 452 5696\\n香港：+852 3051 2780\\n国际：+61 2 8199 0299\\n会议接入码：6792044\\n\	\n投资者也可登录上列网址收听网络回放。" +'\r\
+END:VEVENT\r\
+END:VCALENDAR';
+
+        var googleUrl = "http://www.google.com/calendar/event?action=TEMPLATE&text=阅文集团2019年全年业绩电话会议&dates=20200530T200000/20200530T210000&details=阅文集团将于2020年3月17日公布2019年全年业绩%0D%0A%0D%0A时间：	晚上8:00（香港时间）/ 上午8:00（美国东部时间）%0D%0A%0D%0A语言：	英语%0D%0A%0D%0A网络直播网址：	https://edge.media-server.com/mmc/p/kj9eh82p%0D%0A%0D%0A电话会议号码：%0D%0A%0D%0A美国免费：1866 519 4004%0D%0A香港：+852 3018 6771%0D%0A中国大陆（固网）：800 819 0121 %0D%0A中国大陆（手机）：400 620 8038%0D%0A英国：+44 20 3621 4779%0D%0A国际：+65 6713 5090%0D%0A会议接入码：6792044%0D%0A	%0D%0A电话会议的回放将于2020年3月17日晚上11:00（香港时间）启用，有效期7天：%0D%0A%0D%0A美国免费：1855 452 5696%0D%0A香港：+852 3051 2780%0D%0A国际：+61 2 8199 0299%0D%0A会议接入码：6792044%0D%0A	%0D%0A投资者也可登录上列网址收听网络回放。&location=https://edge.media-server.com/mmc/p/kj9eh82p&trp=false&sprop=&sprop=name:"
+    
+    
+        // 下载文件方法——参考张老师文章
+        var funDownload = function (content, filename) {
+            var eleLink = document.createElement('a');
+            eleLink.download = filename;
+            eleLink.style.display = 'none';
+            // 字符内容转变成blob地址
+            var blob = new Blob([content], { type : 'text/calendar' });
+            eleLink.href = URL.createObjectURL(blob);
+            // 触发点击
+            document.body.appendChild(eleLink);
+            eleLink.click();
+            // 然后移除
+            document.body.removeChild(eleLink);
+        };
+
+        var outlookBtn = document.querySelector('.jsOutlook');
+
+        if ('download' in document.createElement('a')) {
+            // 作为calendar.ics'文件下载
+            outlookBtn.addEventListener('click', function () {
+                funDownload(content, 'calendar.ics');    
+            });
+        } else {
+            outlookBtn.onclick = function () {
+                alert('浏览器不支持');    
+            };
+        }
+
+        var gmailBtn = document.querySelector(".jsGmail");
+        gmailBtn.setAttribute('href', googleUrl);
+    </script>
+</body>
+</html>
