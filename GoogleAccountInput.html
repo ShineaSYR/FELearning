@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GoogleAccountInput</title>
+    <style>
+        .input-con {
+            font-size: 16px;
+            line-height: 24px;
+            position: relative;
+            margin: 20px;
+        }
+        .user-account {
+            padding: 12px 14px;
+            font-size: 16px;
+            line-height: 24px;
+            min-width: 240px;
+            border-radius: 5px;
+            border-width: 1px;
+        }
+        .user-account:focus + .input-note {
+            transform: scale(.75) translateY(-34px) translateX(-26px);
+            color: #0067e6;
+        }
+        .input-note {
+            background-color: #fff;
+            color: #bfbfbf;
+            padding: 4px 12px;
+            position: absolute;
+            bottom: 9px;
+            left: 3px;
+            transition: transform 150ms cubic-bezier(0.4,0,0.2,1);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <p>模拟Google账号登录输入效果</p>
+    <p>具体效果如下方展示所示</p>
+    <div class="input-con">
+        <input type="text" class="user-account">
+        <div class="input-note">电子邮件地址或电话号码</div>
+    </div>
+</body>
+</html>
