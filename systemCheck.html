@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>systemCheck</title>
+</head>
+<body>
+    <p>判断当前设备的情况，是否是移动端，是否为IOS系统</p>
+    <p id="systemResult"></p>
+</body>
+<script>
+    // 判断是否为移动端
+    var u = navigator.userAgent;
+    var systemResult = document.querySelector("#systemResult");
+    if(!!u.match(/AppleWebKit.*Mobile.*/)) {
+        if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+            systemResult.innerText = "当前设备为Mobile，为IOS系统";
+        } else {
+            systemResult.innerText = "当前设备为Mobile，非IOS系统";
+        }
+    } else {
+        systemResult.innerText = "当前设备非Mobile";
+    }
+</script>
+</html>
