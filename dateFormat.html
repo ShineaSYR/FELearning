@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Format</title>
+    <style>
+        .ex[data-index="0"]::before {
+            content: "2020-09-01，进行操作___";
+        }
+        .ex[data-index="1"]::before {
+            content: "2020-9-01，进行操作___";
+        }
+        .ex[data-index="2"]::before {
+            content: "2020/09/01，进行操作___";
+        }
+        .ex[data-index="3"]::before {
+            content: "2020/9/01，进行操作___";
+        }
+    </style>
+</head>
+<body>
+    <p class="ex" data-index="0">2020-09-01，进行操作</p>
+    <p class="ex" data-index="1">2020-09-01，进行操作</p>
+    <p class="ex" data-index="2">2020/09/01，进行操作</p>
+    <p class="ex" data-index="3">2020/9/01，进行操作</p>
+</body>
+    <script>
+        var exArr = document.querySelectorAll(".ex");
+        console.log(exArr)
+        exArr[0].innerHTML = new Date("2020-09-01");
+        exArr[1].innerHTML = new Date("2020-9-01");
+        exArr[2].innerHTML = new Date("2020/09/01");
+        exArr[3].innerHTML = new Date("2020/09/01");
+    </script>
+</html>
