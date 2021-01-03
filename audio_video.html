@@ -33,27 +33,28 @@
   </style>
 </head>
 <body>
-  <div class="audio" id="yeMusic">
-    <audio src="https://ccstatic-1252317822.file.myqcloud.com/assets/5f1b65a0-49a3-11eb-ae7e-35e769c43667.mp3" id="actAudio"></audio>
-  </div>
+  <div class="audio" id="yeMusic"></div>
   <button class="btn-video" id="playVideo">播放视频</button>
   <div class="videoCon">
     <video id="videoFisrt" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" muted src="https://imgservices-1252317822.file.myqcloud.com/file/20201216/yl8mcsjqfs.mp4"></video>
   </div>
   <script src="howler.min.js"></script>
   <script>
+    var myAudio = new Howl({
+      src: ['https://ccstatic-1252317822.file.myqcloud.com/assets/5f1b65a0-49a3-11eb-ae7e-35e769c43667.mp3']
+    });
+
     document.querySelector("#playVideo").addEventListener('click', function() {
       document.querySelector('#videoFisrt').play()
     })
     
     var myMusic = document.querySelector('#yeMusic');
-    var actAudio = document.querySelector('#actAudio');
     myMusic.addEventListener('click', function() {
       if(myMusic.classList.contains('active')) {
-        actAudio.pause();
+        myAudio.pause();
         myMusic.classList.remove('active');
       } else {
-        actAudio.play();
+        myAudio.play();
         myMusic.classList.add('active');
       }
     });
