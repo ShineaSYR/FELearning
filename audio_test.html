@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video & Audio Test</title>
+  <style>
+    .audio {
+      position: fixed;
+      top: 20px; right: 20px;
+      width: 40px; height: 40px;
+      border: 1px solid #f00;
+      background-color: #fff;
+      transition: background-color .2s;
+      z-index: 1;
+    }
+    .audio.active {
+      background-color: #f00;
+    }
+    .btn-video {
+      position: fixed;
+      top: 20px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="audio" id="yeMusic">
+    <audio id="musicFx" loop="loop">
+      <source src="https://ccstatic-1252317822.file.myqcloud.com/assets/5f1b65a0-49a3-11eb-ae7e-35e769c43667.mp3"
+        type="audio/mpeg">
+    </audio>
+  </div>
+  <button class="btn-video" id="playVideo">播放视频</button>
+  <div class="videoCon">
+    <video id="videoFisrt" src="https://imgservices-1252317822.file.myqcloud.com/file/20201216/yl8mcsjqfs.mp4"></video>
+  </div>
+  <script src="https://qidian.gtimg.com/yuewen/v1/js/zepto.min.js"></script>
+  <script>
+    var yeMusic = $('#yeMusic');
+    yeMusic.on('click', function() {
+      if (yeMusic.hasClass('active')) {
+        yeMusic.removeClass('active');
+        $('#yeMusic').find('audio').get(0).pause()
+      } else {
+        yeMusic.addClass('active');
+        $('#yeMusic').find('audio').get(0).play()
+      }
+      
+    });
+    $('#playVideo').on('click', function() {
+      console.log('video play');
+      $('#videoFisrt')[0].play();
+    })
+  </script>
+</body>
+</html>
