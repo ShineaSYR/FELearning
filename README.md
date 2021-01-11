@@ -6,3 +6,6 @@
 - [systemCheck](https://shineasyr.github.io/FELearning/systemCheck.html)
 - [adblock插件](https://shineasyr.github.io/FELearning/test-block.html)
 - [时间格式案例](https://shineasyr.github.io/FELearning/dateFormat.html)
+- [端内H5动效+音效问题](https://shineasyr.github.io/FELearning/audio_test.html)
+- [端内H5动效+音效解决](https://shineasyr.github.io/FELearning/audio_video.html)
+- [端内H5 write-mode 下字体问题复现&解决](https://shineasyr.github.io/FELearning/writing-mode.html)

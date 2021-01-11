@@ -37,10 +37,8 @@
       position: absolute;
       opacity: 0;
       visibility: hidden;
-      background-color: red;
     }
     .font-system {
-      background-color: #0f0;
     }
     .font-hack .font-hanlde {
       /* width: 1em; */
@@ -48,7 +46,6 @@
     }
     .font-hack .font-hanlde span {
       display: block;
-      color: red;
     }
   </style>
 </head>
@@ -85,11 +82,11 @@
 
       // 最高层容器
       var fontCon = document.getElementById('fontCon');
-      if(1) {
-      // if(txtTest.clientHeight < minHeight) {
+      
+      if(txtTest.clientHeight < minHeight) {
         fontCon.classList.add('font-hack');
         document.querySelectorAll('.jsHandle').forEach(function(ele) {
-          console.log(ele);
+          // console.log(ele);
           txtHack(ele);
         }); 
       } else {
