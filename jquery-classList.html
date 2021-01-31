@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-han">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JQuery-classList</title>
+  <style>
+    .fs {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    .bgc {
+      background-color: rgba(255, 0, 0, 0.3);
+      outline: 1px dotted green;
+    }
+    .active {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <p>通过classList原生实现JQuery的addClass/removeClass/hasClass功能</p>
+    <div id="byJquery" class="fs bgc">demo-JQuery</div>
+    <div id="byJS" class="fs bgc">demo-classList</div>
+    <button id="btnJquery">byJquery</button>
+    <button id="btnJS">byJS</button>
+    <button id="btnJSToggle">byJS toggle</button>
+  </div>
+  <script src="https://qidian.gtimg.com/yuewen/v1/js/zepto.min.js"></script>
+  <script>
+    (function() {
+      // jqeury
+      var byJquery = $('#byJquery');
+      $('#btnJquery').on('click', function() {
+        if(byJquery.hasClass('active')) {
+          byJquery.removeClass('active');
+        } else {
+          byJquery.addClass('active');
+        }
+      });
+
+      // js
+      var byJS = document.querySelector('#byJS');
+      document.querySelector('#btnJS').addEventListener('click', function() {
+        if(byJS.classList.contains('active')) {
+          byJS.classList.remove('active');
+        } else {
+          byJS.classList.add('active');
+        }
+      });
+
+      // js-toggle
+      document.querySelector('#btnJSToggle').addEventListener('click', function() {
+        byJS.classList.toggle('active');
+      });
+
+    })();
+  </script>
+</body>
+</html>
