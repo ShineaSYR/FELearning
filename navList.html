@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NavList</title>
+  <style>
+    .backtop {
+      position: fixed;
+      cursor: pointer;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      white-space: pre-wrap;
+      background-color: #fff;
+      border-radius: 100%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .16);
+    }
+    .s-article-nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      text-align: center;
+      min-width: 80px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .16);
+      border-radius: 4px;
+    }
+    .s-anav-con {
+      padding: 6px;
+    }
+    .s-anav-con > a {
+      display: block;
+      text-decoration: none;
+      color: #292929;
+    }
+    .s-anav-con > .active {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="article-con" id="sArticleCon">
+    <h3>Title1</h3>
+    <p>第一，层次清晰，语句协调。主要表现在整句和散句的结合上所显示出来的语言的外在美，出现了不少排迭和对偶的句式，即整句。比如作品的第二段开头写着，“我看见过波澜壮阔的大海，欣赏过水平如镜的西湖”然后用“却从没看见过漓江这样的水”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的漓江的水，即“桂林山水”的一个组成部分，并且转入正题。接着，第三段的开头也以同样的结构写着，“我攀登过峰峦雄伟的泰山，游览过红叶似火的香山”，然后又用“却从没看见过桂林这一带的山”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的“桂林山水”的别一个组成部分即桂林的山，并且用了多个比喻加以歌颂。第二、三两个句段之间的结构也与之类似。文章末尾一段，“这样的山围绕着这样的水，这样的水倒映着这样的山”，于此，山与水，水与山形成了回环；并在这回环的句子里，加上了“空中云雾迷蒙，山间绿树红花，江上竹筏小舟”的排迭渲染，更加点缀了桂林山水”的美所以，课文的结尾写着：“让你感到像是走进了连绵不断的画卷，真是‘舟行碧波上，人在画中游’。”这就不但与作品首段“我们乘着木船，荡舟江，来观赏桂林的山水”遥相呼应，还有画龙点晴之妙了。</p>
+    <h3>Title2</h3>
+    <p>第一，层次清晰，语句协调。主要表现在整句和散句的结合上所显示出来的语言的外在美，出现了不少排迭和对偶的句式，即整句。比如作品的第二段开头写着，“我看见过波澜壮阔的大海，欣赏过水平如镜的西湖”然后用“却从没看见过漓江这样的水”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的漓江的水，即“桂林山水”的一个组成部分，并且转入正题。接着，第三段的开头也以同样的结构写着，“我攀登过峰峦雄伟的泰山，游览过红叶似火的香山”，然后又用“却从没看见过桂林这一带的山”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的“桂林山水”的别一个组成部分即桂林的山，并且用了多个比喻加以歌颂。第二、三两个句段之间的结构也与之类似。文章末尾一段，“这样的山围绕着这样的水，这样的水倒映着这样的山”，于此，山与水，水与山形成了回环；并在这回环的句子里，加上了“空中云雾迷蒙，山间绿树红花，江上竹筏小舟”的排迭渲染，更加点缀了桂林山水”的美所以，课文的结尾写着：“让你感到像是走进了连绵不断的画卷，真是‘舟行碧波上，人在画中游’。”这就不但与作品首段“我们乘着木船，荡舟江，来观赏桂林的山水”遥相呼应，还有画龙点晴之妙了。</p>
+    <h3>Title3</h3>
+    <p>第一，层次清晰，语句协调。主要表现在整句和散句的结合上所显示出来的语言的外在美，出现了不少排迭和对偶的句式，即整句。比如作品的第二段开头写着，“我看见过波澜壮阔的大海，欣赏过水平如镜的西湖”然后用“却从没看见过漓江这样的水”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的漓江的水，即“桂林山水”的一个组成部分，并且转入正题。接着，第三段的开头也以同样的结构写着，“我攀登过峰峦雄伟的泰山，游览过红叶似火的香山”，然后又用“却从没看见过桂林这一带的山”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的“桂林山水”的别一个组成部分即桂林的山，并且用了多个比喻加以歌颂。第二、三两个句段之间的结构也与之类似。文章末尾一段，“这样的山围绕着这样的水，这样的水倒映着这样的山”，于此，山与水，水与山形成了回环；并在这回环的句子里，加上了“空中云雾迷蒙，山间绿树红花，江上竹筏小舟”的排迭渲染，更加点缀了桂林山水”的美所以，课文的结尾写着：“让你感到像是走进了连绵不断的画卷，真是‘舟行碧波上，人在画中游’。”这就不但与作品首段“我们乘着木船，荡舟江，来观赏桂林的山水”遥相呼应，还有画龙点晴之妙了。</p>
+    <h3>Title4</h3>
+    <p>第一，层次清晰，语句协调。主要表现在整句和散句的结合上所显示出来的语言的外在美，出现了不少排迭和对偶的句式，即整句。比如作品的第二段开头写着，“我看见过波澜壮阔的大海，欣赏过水平如镜的西湖”然后用“却从没看见过漓江这样的水”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的漓江的水，即“桂林山水”的一个组成部分，并且转入正题。接着，第三段的开头也以同样的结构写着，“我攀登过峰峦雄伟的泰山，游览过红叶似火的香山”，然后又用“却从没看见过桂林这一带的山”一转，对前面两个肯定的句式加以否定，从而突出了作者所要歌颂的“桂林山水”的别一个组成部分即桂林的山，并且用了多个比喻加以歌颂。第二、三两个句段之间的结构也与之类似。文章末尾一段，“这样的山围绕着这样的水，这样的水倒映着这样的山”，于此，山与水，水与山形成了回环；并在这回环的句子里，加上了“空中云雾迷蒙，山间绿树红花，江上竹筏小舟”的排迭渲染，更加点缀了桂林山水”的美所以，课文的结尾写着：“让你感到像是走进了连绵不断的画卷，真是‘舟行碧波上，人在画中游’。”这就不但与作品首段“我们乘着木船，荡舟江，来观赏桂林的山水”遥相呼应，还有画龙点晴之妙了。</p>
+  </div>
+  <div class="backtop" id="backtop">返回顶部</div>
+  <script>
+    (function () {
+      // 返回顶部
+      var eleBacktop = document.querySelector('#backtop');
+      // 快速跳转
+      var eleH3s = document.querySelectorAll('#sArticleCon h3');
+  
+      var funScroll = function () {
+          var st = document.documentElement.scrollTop || document.body.scrollTop;
+          if (st > 0) {
+              eleBacktop.style.display = 'block';
+          } else {
+              eleBacktop.style.display = 'none';
+          }
+  
+          var indexNav = 0;
+  
+          var arrTop = [].slice.call(eleH3s).map(function (h3) {
+              return h3.getBoundingClientRect().top;
+          });
+  
+          // 容器内部高度
+          var scrollHeight = document.body.scrollHeight;
+          var windowHeight = window.innerHeight;
+          // 滚动到底部，一定是最后一个
+          if (window.innerHeight + st >= scrollHeight - 1) {
+              indexNav = eleH3s.length - 1;
+          } else if (st == 0) {
+              indexNav = 0;
+          } else {
+              var loop = true;
+              arrTop.forEach(function (top, index) {
+                  if (loop == false) {
+                      return;
+                  }
+                  if (index == arrTop.length - 1) {
+                      indexNav = arrTop.length - 1;
+                  } else if (top > 0) {
+                      if (top < windowHeight) {
+                          indexNav = index;
+                      } else {
+                          indexNav = index > 0 ? index - 1 : 0;
+                      }
+  
+                      loop = false;
+                  }
+              });
+          }
+  
+          // 获取目前需要高亮的导航元素
+          var eleNavAll = document.querySelectorAll('#sArticleNav a');
+          var eleTargetNav = eleNavAll[indexNav];
+          if (eleTargetNav && eleTargetNav.classList.contains('active') == false) {
+              eleNavAll.forEach(function (nav) {
+                  nav.classList.remove('active');
+              });
+              eleTargetNav.classList.add('active');
+          }
+      };
+  
+  
+      var htmlNav = '<div class="s-article-nav"><div id="sArticleNav" class="s-anav-con">';
+      [].slice.call(eleH3s).forEach(function (h3) {
+          var id = h3.id || 'id' + String(Math.random()).replace('0.', '');
+          h3.id = id;
+          // 创建定位元素
+          htmlNav = htmlNav + '<a href="#' + id + '">' + h3.innerHTML + '</a>';
+      });
+      htmlNav += '</div></div>';
+  
+      var eleArticle = document.querySelector('#sArticleCon');
+      if (eleArticle) {
+          eleArticle.insertAdjacentHTML('beforeend', htmlNav);
+          document.getElementById('sArticleNav').addEventListener('click', function (event) {
+              var target = event.target;
+              if (target && target.tagName == 'A') {
+                  event.preventDefault();
+  
+                  var selector = target.getAttribute('href');
+                  var eleH3 = document.querySelector(selector);
+  
+                  if (eleH3) {
+                      // window.pageYOffset = eleH3;
+                      eleH3.scrollIntoView();
+                      funScroll();
+                  }
+              }
+          });
+      }
+  
+      // 滚动与返回顶部元素的显隐控制
+      window.addEventListener('scroll', funScroll);
+      window.addEventListener('resize', funScroll);
+  
+      eleBacktop.addEventListener('click', function (event) {
+          event.preventDefault();
+          document.documentElement.scrollTop = document.body.scrollTop = 0;
+      });
+  
+      funScroll();
+  
+  })();
+</script>
+</body>
+</html>
