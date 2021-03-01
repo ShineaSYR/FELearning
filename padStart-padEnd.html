@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>padStart padEnd</title>
+</head>
+<body>
+  <input type="text" id="eleInp" placeholder="please input text">
+  <p id="eleRes"></p>
+  <script>
+    // polyfil-padStart
+    if (!String.prototype.padStart) {
+      String.prototype.padStart = function padStart(targetLength,padString) {
+          targetLength = targetLength>>0; //floor if number or convert non-number to 0;
+          padString = String((typeof padString !== 'undefined' ? padString : ' '));
+          if (this.length > targetLength) {
+              return String(this);
+          }
+          else {
+              targetLength = targetLength-this.length;
+              if (targetLength > padString.length) {
+                  padString += padString.repeat(targetLength/padString.length); //append to original to ensure we are longer than needed
+              }
+              return padString.slice(0,targetLength) + String(this);
+          }
+      };
+    }
+    // polyfil-padEnd
+    if (!String.prototype.padEnd) {
+      String.prototype.padEnd = function padEnd(targetLength,padString) {
+        targetLength = targetLength>>0; //floor if number or convert non-number to 0;
+        padString = String((typeof padString !== 'undefined' ? padString: ''));
+        if (this.length > targetLength) {
+          return String(this);
+        }
+        else {
+          targetLength = targetLength-this.length;
+          if (targetLength > padString.length) {
+            padString += padString.repeat(targetLength/padString.length); //append to original to ensure we are longer than needed
+          }
+          return String(this) + padString.slice(0,targetLength);
+        }
+      };
+    }
+    if(!!Element.prototype.addEventListener) {
+      // IE9++
+      var eleInp = document.querySelector("#eleInp");
+      eleInp.addEventListener('change', function () {
+        document.querySelector('#eleRes').innerText = '*#$%^@'+'---'+ eleInp.value.padStart(5,'*#$%^@');
+      })
+    } else {
+      // IE8--
+      document.getElementById('eleRes').innerText = '*#$%^@'+'---'+ eleInp.value.padStart(5,'*#$%^@');
+    }
+  </script>
+</body>
+</html>
