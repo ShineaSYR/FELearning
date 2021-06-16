@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>repalceState</title>
+  <style>
+    .demo {
+      outline: 2px dotted;
+    }
+    .before {
+      outline-color: orange;
+    }
+    .after {
+      outline-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo before">
+    <h3>传统方式-link直接跳转</h3>
+    <p class="jsDefaultTxt">当前为默认数据</p>
+    <div class="jsDefaultLink">
+      <a class="page-link" href="?id=1">id =1</a>
+      <a class="page-link" href="?id=2">id =2</a>
+      <a class="page-link" href="?id=3">id =3</a>
+      <a class="page-link" href="?id=4">id =4</a>
+    </div>
+  </div>
+  <div class="demo after">
+    <h3>优化后的方式-replace替换</h3>
+    <p class="jsRepalceTxt">当前为默认数据</p>
+    <div class="jsLink">
+      <a class="page-link" href="?id=1">id =1</a>
+      <a class="page-link" href="?id=2">id =2</a>
+      <a class="page-link" href="?id=3">id =3</a>
+      <a class="page-link" href="?id=4">id =4</a>
+    </div>
+  </div>
+  
+  <script>
+    var allDatainfo = ['id为1时，展示的内容', 'id为2时，展示的内容', 'id为3时，展示的内容', 'id为4时，展示的内容'];
+    var allLinks = document.querySelector('.jsLink');
+    var jsRepalceTxt = document.querySelector('.jsRepalceTxt');
+    allLinks.addEventListener('click', function (e) {
+      e.preventDefault();
+      var el = e.target;
+      if (el && el.getAttribute('href') ) {
+        var currId = parseInt(el.getAttribute('href').split("id=")[1]);
+        jsRepalceTxt.innerText = allDatainfo[currId - 1];
+        if (history.replaceState) {
+          history.replaceState(null, document.title, location.href.replace(/id=\d+/, 'id=' + currId));
+        } else {
+          window.location.herf = window.location.herf.replace(/id=\d+/, 'id=' + currId);
+        }
+      }
+    });
+
+
+    var jsDefaultTxt = document.querySelector('.jsDefaultTxt');
+
+    function workpage() {
+      if(location.search && /id=\d+/.test(location.search)) {
+        var idIndex = parseInt(location.search.split("id=")[1]);
+        jsDefaultTxt.innerText = allDatainfo[idIndex - 1];
+      }
+    }
+    workpage()
+    
+  </script>
+</body>
+</html>
