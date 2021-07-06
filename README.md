@@ -12,3 +12,4 @@
 - [JQuery & classList](https://shineasyr.github.io/FELearning/jquery-classList.html)
 - [文章列表生成](https://shineasyr.github.io/FELearning/navList.html)
 - [padStart-padEnd](https://shineasyr.github.io/FELearning/padStart-padEnd.html)
+- [超链接打开](https://shineasyr.github.io/FELearning/linkPage.html)

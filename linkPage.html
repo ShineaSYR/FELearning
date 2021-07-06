@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>link Page</title>
+</head>
+<body>
+  <button id="hrefBtn">location.href</button>
+  <button id="openBtn">window.open</button>
+  <button id="openAjaxBtn">window.open Ajax</button>
+  <!-- javascript -->
+  <script>
+// Ajax-Get
+function ajaxGet(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.send();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      callback(xhr.responseText);
+    }
+  }
+}
+var hrefBtn = document.querySelector('#hrefBtn');
+hrefBtn.addEventListener('click', function() {
+  window.location.href = 'https://www.baidu.com/';   
+})
+
+var openBtn = document.querySelector('#openBtn');
+openBtn.addEventListener('click', function() {
+  window.open('https://www.baidu.com/');   
+})
+var openAjaxBtn = document.querySelector('#openAjaxBtn');
+openAjaxBtn.addEventListener('click', function() {
+  ajaxGet('https://api.juejin.cn/user_api/v1/author/recommend?category_id=&cursor=0&limit=20', function(data) {
+    console.log('juein', data);
+  })
+})
+  </script>
+</body>
+</html>
