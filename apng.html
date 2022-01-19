@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANPG背景叠加</title>
+  <style>
+    .gif {
+      min-height: 288px;
+      background: url("https://imgservices-1252317822.image.myqcloud.com/image/011720220130849/e6f2b522.gif") no-repeat right calc(50% - 520px - 150px) top/auto 160px, linear-gradient(to bottom, #F12B2A, rgba(0,0,255,0)) no-repeat center top/ 100% 288px;
+    }
+    .anpg {
+      min-height: 288px;
+      background: url('https://imgservices-1252317822.image.myqcloud.com/image/011820220132828/ac5e77f3.png') no-repeat left calc(50% - 520px - 150px) top/auto, url("https://imgservices-1252317822.image.myqcloud.com/image/011820220140749/aab3cead.png") no-repeat right calc(50% - 520px - 150px) top/auto, linear-gradient(to bottom, #F12B2A, rgba(0,0,255,0)) no-repeat center top/ 100% 288px;
+    }
+
+  </style>
+</head>
+<body>
+  <p>gif的效果⬇️</p>
+  <div class="gif"></div>
+  <p>APNG的效果⬇️</p>
+  <div class="anpg"></div>
+</body>
+</html>

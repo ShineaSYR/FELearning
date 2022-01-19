@@ -13,3 +13,4 @@
 - [文章列表生成](https://shineasyr.github.io/FELearning/navList.html)
 - [padStart-padEnd](https://shineasyr.github.io/FELearning/padStart-padEnd.html)
 - [超链接打开](https://shineasyr.github.io/FELearning/linkPage.html)
+- [APNG背景融合](https://shineasyr.github.io/FELearning/apng.html)
